@@ -10,7 +10,7 @@ public class LocatorsCocept {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\reddy\\Desktop\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\bravindra\\chromedriver-win64\\chromedriver-win64");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
