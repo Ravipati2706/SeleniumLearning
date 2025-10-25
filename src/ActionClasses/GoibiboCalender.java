@@ -1,5 +1,7 @@
 package ActionClasses;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +23,7 @@ public class GoibiboCalender {
 //		String Logoname = driver.findElement(By.xpath("//span[@class='header-sprite logo']")).getText();
 //		System.out.println(Logoname);
 		driver.findElement(By.id("departureCalendar")).click();
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("DayPicker-wrapper")));
 		
 		String yearmonthval = driver.findElement(By.xpath("//div[@class='DayPicker-Caption']")).getText();

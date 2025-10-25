@@ -1,10 +1,8 @@
 package Webdriver;
 
 import java.io.File;
-
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -24,7 +22,7 @@ public class DropDrownHandling {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.facebook.com/");
 		
 		//process:1 direct using select  class

@@ -1,6 +1,8 @@
 package CalenderHandlingScripts;
 
 import java.awt.AWTException;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +22,7 @@ static WebDriver driver;
 		driver.get("https://www.makemytrip.com");
 		
 		//driver.switchTo().alert().accept();
-		WebDriverWait wait= new WebDriverWait(driver, 10);
+		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'DEPARTURE')]"))).click();
 		//driver.findElement(By.xpath("//span[contains(text(),'DEPARTURE')]")).click();
 		

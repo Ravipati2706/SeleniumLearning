@@ -1,6 +1,6 @@
 package Webdriver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ public class ElementVisibilityTest {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://register.freecrm.com/register/");
 			
 //1.IsDisplayed:It is used to check  if a particular element is displayed in the webpage or not it will return one boolean value

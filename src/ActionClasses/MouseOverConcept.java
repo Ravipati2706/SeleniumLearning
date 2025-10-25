@@ -1,6 +1,7 @@
 package ActionClasses;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,8 @@ public class MouseOverConcept {
 		driver.manage().deleteAllCookies();
 		driver.get("http://mrbool.com/introducing-javascript-6-arrow-functions/36854");
 		//Thread.sleep(3000);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		Actions ac = new Actions(driver);
 		ac.moveToElement(driver.findElement(By.className("menulink"))).build().perform();

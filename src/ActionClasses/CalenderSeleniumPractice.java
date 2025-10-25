@@ -1,5 +1,7 @@
 package ActionClasses;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +23,7 @@ public class CalenderSeleniumPractice {
 		boolean b1 = driver.findElement(By.xpath("//*[@id=\"post-body-2633212108852578826\"]/h1")).isDisplayed();
 		System.out.print(b1);
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriverWait wait= new WebDriverWait(driver, 5);
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-datepicker-calendar")));
 		
 		//capturing the text for current calender M Y

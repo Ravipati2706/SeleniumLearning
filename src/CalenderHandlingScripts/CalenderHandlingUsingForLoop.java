@@ -1,7 +1,7 @@
 package CalenderHandlingScripts;
 
+import java.time.Duration;
 import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,8 +18,8 @@ public class CalenderHandlingUsingForLoop {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		//dynamic wait
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.abhibus.com/");
 		
 		//Enter and selectinng the data in source and destination

@@ -1,5 +1,6 @@
 package CalenderHandlingScripts;
 
+import java.time.Duration;
 import java.util.List;
 
 import java.util.concurrent.TimeUnit;
@@ -18,8 +19,8 @@ public class CalenderConceptByJS {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		//dynamic wait
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.spicejet.com/");
 		
 		driver.findElement(By.xpath("//input[@id='ctl00_mainContent_rbtnl_Trip_1']")).click();
