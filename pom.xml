@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,34 +8,29 @@
     <artifactId>SeleniumLearning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <!-- ================= PROPERTIES ================= -->
-
+    <!-- Project Properties -->
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <selenium.version>4.45.0</selenium.version>
+        <selenium.version>4.51.0</selenium.version>
         <webdrivermanager.version>6.3.4</webdrivermanager.version>
         <testng.version>7.12.0</testng.version>
-        <poi.version>5.2.5</poi.version>
-        <extentreports.version>5.1.1</extentreports.version>
+        <poi.version>5.5.1</poi.version>
+        <extentreports.version>5.1.2</extentreports.version>
         <log4j.version>2.26.1</log4j.version>
     </properties>
 
-
-    <!-- ================= DEPENDENCIES ================= -->
-
+    <!-- Dependencies -->
     <dependencies>
 
-        <!-- Selenium -->
+        <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
-
-        <!-- WebDriver Manager -->
+        <!-- WebDriverManager: optional driver management library -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -51,11 +43,10 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
         </dependency>
 
 
-        <!-- Apache POI -->
+        <!-- Apache POI: Excel handling -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -68,14 +59,12 @@
             <version>${poi.version}</version>
         </dependency>
 
-
-        <!-- Extent Reports -->
+        <!-- ExtentReports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extentreports.version}</version>
         </dependency>
-
 
         <!-- Log4j API -->
         <dependency>
@@ -83,7 +72,6 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-
 
         <!-- Log4j Core -->
         <dependency>
@@ -95,23 +83,22 @@
     </dependencies>
 
 
-    <!-- ================= BUILD ================= -->
-
+    <!-- Build Configuration -->
     <build>
+        <!-- Tell Maven where your Java source files are located -->
+        <sourceDirectory>src</sourceDirectory>
 
         <plugins>
-
+            <!-- Java Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.15.0</version>
+                <version>3.16.0</version>
                 <configuration>
                     <release>21</release>
                 </configuration>
             </plugin>
-
         </plugins>
-
     </build>
 
 </project>

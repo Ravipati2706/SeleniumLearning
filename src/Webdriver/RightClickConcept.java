@@ -8,26 +8,38 @@ import org.openqa.selenium.interactions.Actions;
 
 public class RightClickConcept {
 
-	public static void main(String[] args) {
-		
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\reddy\\Desktop\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
-		//Create Action class 
-		Actions ac = new Actions(driver);
-		//create webelement for right click button
-		WebElement rightclickButton = driver.findElement(By.xpath("//span[contains(text(),'right click me')]"));
-		//click on right click button
-		ac.contextClick(rightclickButton).build().perform();
-		//create WebElement for Copy 
-		WebElement copy = driver.findElement(By.cssSelector(".context-menu-icon-copy"));
-		String st=copy.getText(); // to get the text for particular webelement
-		System.out.println(copy);
-		copy.click();
-		
+    public static void main(String[] args) {
 
-	}
+        WebDriver driver = new ChromeDriver();
 
+        try {
+            // Open the right-click demo page
+            driver.manage().window().maximize();
+            driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
+
+            // Locate the right-click button
+            WebElement rightClickButton =
+                    driver.findElement(By.xpath("//span[text()='right click me']"));
+
+            // Perform right-click
+            Actions actions = new Actions(driver);
+            actions.contextClick(rightClickButton).perform();
+
+            // Locate and click the Copy option
+            WebElement copyOption =
+                    driver.findElement(By.cssSelector(".context-menu-icon-copy"));
+
+            copyOption.click();
+
+            System.out.println("Right-click performed successfully.");
+            System.out.println("Copy option selected.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
+    }
 }
